@@ -1,0 +1,13 @@
+{
+  "certifications": [
+    {
+      "name": "Certification Name",
+      "issuer": "Issuing Organization",
+      "date": "2024",
+      "credentialId": "123456",
+      "credentialUrl": "https://example.com/verify/123456",
+      "image": ""
+    }
+  ]
+}
+

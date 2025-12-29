@@ -1,0 +1,38 @@
+[
+  {
+    "id": "about",
+    "component": "About",
+    "data": "about"
+  },
+  {
+    "id": "skills",
+    "component": "Skills",
+    "data": "skills"
+  },
+  {
+    "id": "projects",
+    "component": "Projects",
+    "data": "projects"
+  },
+  {
+    "id": "certifications",
+    "component": "Certifications",
+    "data": "certifications"
+  },
+  {
+    "id": "experience",
+    "component": "Experience",
+    "data": "experience"
+  },
+  {
+    "id": "education",
+    "component": "Education",
+    "data": "education"
+  },
+  {
+    "id": "contact",
+    "component": "Contact",
+    "data": "contact"
+  }
+]
+

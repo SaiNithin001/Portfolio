@@ -1,0 +1,23 @@
+{
+  "experiences": [
+    {
+      "title": "Data Product Engineer",
+      "company": "LTIMindtree",
+      "location": "",
+      "startDate": "",
+      "endDate": "Present",
+      "description": "Developed and automated the installation of various tech stacks using Bash scripts, significantly reducing manual effort by 85% and improving deployment efficiency. Developed a disaster recovery solution by automating the backup and restoration of Elasticsearch and GitLab to and from an S3 bucket, utilizing a combination of Shell and Python scripts to ensure data integrity and quick recovery. Drastically reduced the deployment time of our product (Refract) by approximately 92% utilizing HELM charts instead of traditional YAML-based deployments. Optimized the AI platforms used in our product by creating new, enhanced Docker images, leading to improved performance and efficiency.",
+      "technologies": ["Bash", "Python", "Elasticsearch", "Docker", "Kubernetes", "HELM", "AWS S3", "GitLab"]
+    },
+    {
+      "title": "Web Development Intern",
+      "company": "Neo Mentors Education Pvt Ltd",
+      "location": "",
+      "startDate": "",
+      "endDate": "",
+      "description": "Developed a full-stack educational website from scratch using JavaScript, HTML, CSS, and Bootstrap, with Node.js and Express for backend routing. Implemented responsive UI and intuitive navigation to streamline access to study materials and live free classes. Utilized Python with Pandas and Matplotlib to analyze user interaction data. Built a recommendation engine to deliver personalized content, improving user engagement and expanding reach.",
+      "technologies": ["JavaScript", "HTML", "CSS", "Bootstrap", "Node.js", "Express", "Python", "Pandas", "Matplotlib"]
+    }
+  ]
+}
+

@@ -1,0 +1,42 @@
+{
+  "categories": [
+    {
+      "name": "Languages",
+      "skills": [
+        { "name": "Python", "level": "Advanced" },
+        { "name": "Java", "level": "Advanced" },
+        { "name": "JavaScript", "level": "Advanced" },
+        { "name": "C++", "level": "Intermediate" },
+        { "name": "Ruby", "level": "Intermediate" },
+        { "name": "Bash", "level": "Advanced" },
+        { "name": "HTML/CSS", "level": "Advanced" },
+        { "name": "SQL", "level": "Advanced" }
+      ]
+    },
+    {
+      "name": "Frameworks & Tools",
+      "skills": [
+        { "name": "React", "level": "Advanced" },
+        { "name": "Node.js", "level": "Advanced" },
+        { "name": "Django", "level": "Intermediate" },
+        { "name": "Git", "level": "Advanced" },
+        { "name": "Docker", "level": "Advanced" },
+        { "name": "Kubernetes", "level": "Advanced" },
+        { "name": "Elasticsearch", "level": "Intermediate" },
+        { "name": "MySQL", "level": "Advanced" },
+        { "name": "PostgreSQL", "level": "Advanced" }
+      ]
+    },
+    {
+      "name": "Platforms",
+      "skills": [
+        { "name": "AWS", "level": "Advanced" },
+        { "name": "Azure", "level": "Intermediate" },
+        { "name": "Linux", "level": "Advanced" },
+        { "name": "Windows", "level": "Advanced" },
+        { "name": "Red Hat", "level": "Intermediate" }
+      ]
+    }
+  ]
+}
+

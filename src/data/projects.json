@@ -1,0 +1,37 @@
+{
+  "projects": [
+    {
+      "title": "expOS - Experimental Operating System",
+      "description": "Collaborated with students from NIT Calicut to develop an experimental operating system from scratch, implementing key OS data structures and a modular kernel with components such as multi-programming, interrupt handling, virtual memory, demand paging, exception handling, system calls, bootstrapping, and process synchronization on a simulated Virtual Machine XSM.",
+      "technologies": ["C", "Assembly", "Operating Systems", "Systems Programming"],
+      "githubUrl": "",
+      "liveUrl": "",
+      "image": ""
+    },
+    {
+      "title": "Semantic Segmentation & Motion Prediction",
+      "description": "Built a U-Net-based semantic segmentation model to classify each pixel in road images, achieving 94% validation accuracy and 96.5% IoU, enabling precise road feature identification. Extended this by developing a ResNet-based motion prediction model for self-driving cars, using segmented maps and sensor data to forecast the three most likely trajectories with confidence scores, helping identify the safest routes for autonomous navigation.",
+      "technologies": ["Python", "PyTorch", "Deep Learning", "Computer Vision", "U-Net", "ResNet"],
+      "githubUrl": "",
+      "liveUrl": "",
+      "image": ""
+    },
+    {
+      "title": "Reflection Cycle",
+      "description": "Built a full-stack web application using Django and React to guide users through the five-step Reflection Cycle (Select, Describe, Analyze, Appraise, Transform). Implemented features like file uploads, structured form inputs, and dynamic UI rendering. Integrated the ChatGPT API to generate personalized reflection prompts, replacing static questions with context-aware, AI-driven suggestions.",
+      "technologies": ["Django", "React", "Python", "JavaScript", "ChatGPT API", "REST APIs"],
+      "githubUrl": "",
+      "liveUrl": "",
+      "image": ""
+    },
+    {
+      "title": "OLEI",
+      "description": "Developed a Ruby on Rails web application that evaluates leadership qualities using surveys and visualizes metrics in a tetrahedron. Designed and implemented end-to-end functionality, including survey input, data processing, and 3D visualization.",
+      "technologies": ["Ruby on Rails", "JavaScript", "3D Visualization", "Web Development"],
+      "githubUrl": "",
+      "liveUrl": "",
+      "image": ""
+    }
+  ]
+}
+

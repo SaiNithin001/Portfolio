@@ -1,0 +1,23 @@
+{
+  "educations": [
+    {
+      "degree": "M.S. in Computer Science",
+      "institution": "Texas A&M University",
+      "location": "College Station, TX",
+      "startDate": "Aug 2024",
+      "endDate": "May 2026 (Expected)",
+      "description": "Concentrations: Machine Learning & Systems Engineering. Coursework: Analysis of Algorithms, Software Engineering, Operating Systems, Machine Learning, Parallel Computing, Artificial Intelligence",
+      "gpa": "3.7/4.0"
+    },
+    {
+      "degree": "B.Tech. in Electrical Engineering",
+      "institution": "Indian Institute of Technology",
+      "location": "Varanasi, India",
+      "startDate": "July 2018",
+      "endDate": "May 2022",
+      "description": "Concentrations: Machine Learning & Computer Vision",
+      "gpa": "3.5/4.0"
+    }
+  ]
+}
+
