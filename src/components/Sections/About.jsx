@@ -14,7 +14,14 @@ function About({ data }) {
       <div className="about-content">
         {profileImage && (
           <div className="profile-image-container">
-            <img src={profileImage} alt={name} className="profile-image" />
+            <img 
+              src={profileImage} 
+              alt={name} 
+              className="profile-image"
+              onError={(e) => {
+                e.target.style.display = 'none'
+              }}
+            />
           </div>
         )}
         <div className="about-text">

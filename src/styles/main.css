@@ -369,9 +369,32 @@ main {
 
 /* Skills Section */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
   gap: var(--spacing-xl);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--spacing-md);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-bg-secondary);
+}
+
+.skills-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.skills-grid::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
 }
 
 .skill-category {
@@ -433,14 +456,41 @@ main {
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: flex;
   gap: var(--spacing-xl);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--spacing-md);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-bg-secondary);
+}
+
+.projects-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
+  min-width: 350px;
+  max-width: 400px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .project-image {
@@ -485,13 +535,40 @@ main {
 
 /* Certifications Section */
 .certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
   gap: var(--spacing-xl);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--spacing-md);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-bg-secondary);
+}
+
+.certifications-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.certifications-grid::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+.certifications-grid::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+.certifications-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
 }
 
 .certification-card {
   text-align: center;
+  min-width: 300px;
+  max-width: 350px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .cert-image {

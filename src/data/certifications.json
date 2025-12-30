@@ -1,12 +1,28 @@
 {
   "certifications": [
     {
-      "name": "Certification Name",
-      "issuer": "Issuing Organization",
-      "date": "2024",
-      "credentialId": "123456",
-      "credentialUrl": "https://example.com/verify/123456",
-      "image": ""
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "AWS",
+      "date": "September 2023",
+      "credentialId": "DCF8R85KVEQEQB39",
+      "credentialUrl": "https://aws.amazon.com/verification",
+      "image": "images/AWS_Cloud_Practitioner.jpg"
+    },
+    {
+      "name": "Gremlin Certified Chaos Engineering Practitioner (GCCEP)",
+      "issuer": "Gremlin",
+      "date": "October 2023",
+      "credentialId": "84530027",
+      "credentialUrl": "https://www.credential.net/ee273b23-e271-4e60-9de4-6afcc8eacdd9#gs.720cy7",
+      "image": "images/GCCEP_Certification.jpg"
+    },
+    {
+      "name": "Gremlin Enterprise Chaos Engineering Certification (GECEC)",
+      "issuer": "Gremlin",
+      "date": "October 2023",
+      "credentialId": "84504153",
+      "credentialUrl": "credential.net/d8f080ea-ae56-4adb-9f20-40733c7e5e8a",
+      "image": "images/GECEC_Certification.jpg"
     }
   ]
 }
