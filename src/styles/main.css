@@ -75,6 +75,21 @@ main {
   max-width: var(--container-max-width);
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-wrapper .scrollable-container-wrapper {
+  padding: 0 var(--spacing-2xl);
+  margin: 0 calc(-1 * var(--spacing-2xl));
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.section-wrapper .scrollable-container-wrapper.has-overflow {
+  justify-content: flex-start;
 }
 
 .section-title {
@@ -213,9 +228,19 @@ main {
   box-shadow: var(--shadow-sm);
   z-index: var(--z-fixed);
   transition: all var(--transition-base);
+  border-bottom: 1px solid transparent;
+}
+
+.dark .header {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.dark .header.scrolled {
   box-shadow: var(--shadow-md);
 }
 
@@ -226,6 +251,12 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
 }
 
 .logo a {
@@ -258,6 +289,15 @@ main {
   color: var(--color-primary);
 }
 
+.dark .nav-list a {
+  color: var(--color-text-secondary) !important;
+}
+
+.dark .nav-list a:hover,
+.dark .nav-list a.active {
+  color: var(--color-primary-light) !important;
+}
+
 .nav-list a.active::after {
   content: '';
   position: absolute;
@@ -266,6 +306,34 @@ main {
   right: 0;
   height: 2px;
   background: var(--gradient-primary);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  background: var(--color-bg-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  padding: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
 }
 
 .mobile-menu-toggle {
@@ -285,12 +353,17 @@ main {
   transition: all var(--transition-fast);
 }
 
+.dark .mobile-menu-toggle span {
+  background: var(--color-text-primary);
+}
+
 /* Footer Styles */
 .footer {
-  background: var(--color-bg-dark);
-  color: var(--color-text-inverse);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
   padding: var(--spacing-xl);
   margin-top: var(--spacing-4xl);
+  border-top: 1px solid var(--color-border);
 }
 
 .footer-container {
@@ -371,36 +444,24 @@ main {
 .skills-grid {
   display: flex;
   gap: var(--spacing-xl);
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  padding-bottom: var(--spacing-md);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) var(--color-bg-secondary);
+  padding: var(--spacing-md) 0;
 }
 
-.skills-grid::-webkit-scrollbar {
-  height: 8px;
-}
-
-.skills-grid::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
-  border-radius: 4px;
-}
-
-.skills-grid::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
-}
-
-.skills-grid::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-dark);
+/* Add padding to prevent shadow clipping on first/last items when overflow */
+.scrollable-container-wrapper.has-overflow .skills-grid {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .skill-category {
   background: var(--color-bg-secondary);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
+  min-width: 300px;
+  max-width: 350px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transition: all var(--transition-base);
 }
 
 .category-title {
@@ -450,6 +511,74 @@ main {
   color: var(--color-text-inverse);
 }
 
+/* Scrollable Container */
+.scrollable-container-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.scrollable-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scroll-behavior: smooth;
+}
+
+/* Center content when no overflow */
+.scrollable-container.center-content > * {
+  display: flex;
+  justify-content: center;
+}
+
+.scrollable-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-lg);
+}
+
+.scroll-arrow:hover {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-colored);
+}
+
+.scroll-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.scroll-arrow-left {
+  left: -24px;
+}
+
+.scroll-arrow-right {
+  right: -24px;
+}
+
+.scroll-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* Projects Section */
 .projects-section {
   background: var(--color-bg-secondary);
@@ -458,30 +587,31 @@ main {
 .projects-grid {
   display: flex;
   gap: var(--spacing-xl);
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  padding-bottom: var(--spacing-md);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) var(--color-bg-secondary);
+  padding: var(--spacing-md) 0;
 }
 
-.projects-grid::-webkit-scrollbar {
-  height: 8px;
+/* Add padding to prevent shadow clipping on first/last items when overflow */
+.scrollable-container-wrapper.has-overflow .projects-grid {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-.projects-grid::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
-  border-radius: 4px;
+/* When no overflow, center the items */
+.scrollable-container.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.projects-grid::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
-}
-
-.projects-grid::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-dark);
+.scrollable-container.center-content .projects-grid,
+.scrollable-container.center-content .certifications-grid,
+.scrollable-container.center-content .skills-grid,
+.scrollable-container.center-content .education-list {
+  justify-content: center !important;
+  margin: 0 auto !important;
+  width: fit-content;
+  max-width: 100%;
+  display: flex;
 }
 
 .project-card {
@@ -490,7 +620,49 @@ main {
   min-width: 350px;
   max-width: 400px;
   flex-shrink: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  transition: all var(--transition-base);
+}
+
+/* Only apply dimming/highlighting when there's overflow */
+.scrollable-container-wrapper.has-overflow .project-card,
+.scrollable-container-wrapper.has-overflow .certification-card,
+.scrollable-container-wrapper.has-overflow .skill-category,
+.scrollable-container-wrapper.has-overflow .education-card {
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
+/* Highlight centered items - only when overflow */
+.scrollable-container-wrapper.has-overflow .project-card.highlighted,
+.scrollable-container-wrapper.has-overflow .certification-card.highlighted,
+.scrollable-container-wrapper.has-overflow .skill-category.highlighted,
+.scrollable-container-wrapper.has-overflow .education-card.highlighted {
+  opacity: 1 !important;
+  transform: scale(1.08) !important;
+  z-index: 5;
+  box-shadow: var(--shadow-colored);
+  border: 2px solid var(--color-primary);
+}
+
+.project-card.highlighted {
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.certification-card.highlighted,
+.skill-category.highlighted,
+.education-card.highlighted {
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-primary);
+}
+
+/* Remove default border from non-highlighted cards - only when overflow */
+.scrollable-container-wrapper.has-overflow .project-card:not(.highlighted),
+.scrollable-container-wrapper.has-overflow .certification-card:not(.highlighted),
+.scrollable-container-wrapper.has-overflow .skill-category:not(.highlighted),
+.scrollable-container-wrapper.has-overflow .education-card:not(.highlighted) {
+  border: 2px solid transparent;
 }
 
 .project-image {
@@ -537,30 +709,13 @@ main {
 .certifications-grid {
   display: flex;
   gap: var(--spacing-xl);
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  padding-bottom: var(--spacing-md);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) var(--color-bg-secondary);
+  padding: var(--spacing-md) 0;
 }
 
-.certifications-grid::-webkit-scrollbar {
-  height: 8px;
-}
-
-.certifications-grid::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
-  border-radius: 4px;
-}
-
-.certifications-grid::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
-  border-radius: 4px;
-}
-
-.certifications-grid::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary-dark);
+/* Add padding to prevent shadow clipping on first/last items when overflow */
+.scrollable-container-wrapper.has-overflow .certifications-grid {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .certification-card {
@@ -568,7 +723,8 @@ main {
   min-width: 300px;
   max-width: 350px;
   flex-shrink: 0;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+  transition: all var(--transition-base);
 }
 
 .cert-image {
@@ -667,13 +823,24 @@ main {
 
 /* Education Section */
 .education-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  display: flex;
   gap: var(--spacing-xl);
+  padding: var(--spacing-md) 0;
+}
+
+/* Add padding to prevent shadow clipping on first/last items when overflow */
+.scrollable-container-wrapper.has-overflow .education-list {
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .education-card {
   text-align: left;
+  min-width: 400px;
+  max-width: 450px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  transition: all var(--transition-base);
 }
 
 .education-degree {
@@ -752,6 +919,7 @@ main {
     flex-direction: column;
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
+    border-bottom: 1px solid var(--color-border);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -762,6 +930,11 @@ main {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+  }
+
+  .dark .nav-list {
+    background: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .about-content {
@@ -778,18 +951,54 @@ main {
     flex-direction: column;
   }
 
-  .education-list {
-    grid-template-columns: 1fr;
-  }
-
   .contact-content {
     grid-template-columns: 1fr;
   }
 
-  .projects-grid,
-  .certifications-grid,
-  .skills-grid {
-    grid-template-columns: 1fr;
+  /* On mobile, allow horizontal scroll but make items smaller */
+  .projects-grid .project-card,
+  .certifications-grid .certification-card,
+  .skills-grid .skill-category,
+  .education-list .education-card {
+    min-width: 280px;
+    max-width: 300px;
+  }
+
+  .scroll-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-arrow-left {
+    left: -20px;
+  }
+
+  .scroll-arrow-right {
+    right: -20px;
+  }
+
+  .scroll-arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .section-wrapper .scrollable-container-wrapper {
+    padding: 0 var(--spacing-lg);
+    margin: 0 calc(-1 * var(--spacing-lg));
+  }
+
+  .header-right {
+    gap: var(--spacing-md);
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .theme-toggle svg {
+    width: 18px;
+    height: 18px;
   }
 }
 

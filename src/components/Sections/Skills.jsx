@@ -1,4 +1,5 @@
 import SectionWrapper from '../SectionWrapper'
+import ScrollableContainer from '../ScrollableContainer'
 
 function Skills({ data }) {
   if (!data || !data.categories) return null
@@ -12,6 +13,7 @@ function Skills({ data }) {
       subtitle="Technologies and tools I work with"
       className="skills-section"
     >
+      <ScrollableContainer>
       <div className="skills-grid">
         {categories.map((category, index) => (
           <div key={index} className="skill-category">
@@ -29,6 +31,7 @@ function Skills({ data }) {
           </div>
         ))}
       </div>
+      </ScrollableContainer>
     </SectionWrapper>
   )
 }

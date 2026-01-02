@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Navigation from './Navigation'
+import ThemeToggle from './ThemeToggle'
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -19,7 +20,10 @@ function Header() {
         <div className="logo">
           <a href="#about">Portfolio</a>
         </div>
-        <Navigation />
+        <div className="header-right">
+          <Navigation />
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   )

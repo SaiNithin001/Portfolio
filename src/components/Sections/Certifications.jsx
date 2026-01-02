@@ -1,4 +1,5 @@
 import SectionWrapper from '../SectionWrapper'
+import ScrollableContainer from '../ScrollableContainer'
 
 function Certifications({ data }) {
   if (!data || !data.certifications) return null
@@ -12,6 +13,7 @@ function Certifications({ data }) {
       subtitle="Professional certifications and achievements"
       className="certifications-section"
     >
+      <ScrollableContainer>
       <div className="certifications-grid">
         {certifications.map((cert, index) => (
           <div key={index} className="certification-card card">
@@ -41,6 +43,7 @@ function Certifications({ data }) {
           </div>
         ))}
       </div>
+      </ScrollableContainer>
     </SectionWrapper>
   )
 }

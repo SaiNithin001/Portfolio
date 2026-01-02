@@ -1,4 +1,5 @@
 import SectionWrapper from '../SectionWrapper'
+import ScrollableContainer from '../ScrollableContainer'
 
 function Education({ data }) {
   if (!data || !data.educations) return null
@@ -12,6 +13,7 @@ function Education({ data }) {
       subtitle="My academic background"
       className="education-section"
     >
+      <ScrollableContainer>
       <div className="education-list">
         {educations.map((edu, index) => (
           <div key={index} className="education-card card">
@@ -28,6 +30,7 @@ function Education({ data }) {
           </div>
         ))}
       </div>
+      </ScrollableContainer>
     </SectionWrapper>
   )
 }

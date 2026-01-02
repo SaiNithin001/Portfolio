@@ -1,4 +1,5 @@
 import SectionWrapper from '../SectionWrapper'
+import ScrollableContainer from '../ScrollableContainer'
 
 function Projects({ data }) {
   if (!data || !data.projects) return null
@@ -12,6 +13,7 @@ function Projects({ data }) {
       subtitle="Some of my recent work"
       className="projects-section"
     >
+      <ScrollableContainer>
       <div className="projects-grid">
         {projects.map((project, index) => (
           <div key={index} className="project-card card">
@@ -54,6 +56,7 @@ function Projects({ data }) {
           </div>
         ))}
       </div>
+      </ScrollableContainer>
     </SectionWrapper>
   )
 }
